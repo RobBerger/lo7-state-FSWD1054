@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <ThemeContext.Provider value={{theme}}>
+    <ThemeContext.Provider value={theme}>
       <Navigation />
     </ThemeContext.Provider>
   );

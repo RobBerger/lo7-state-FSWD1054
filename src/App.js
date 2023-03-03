@@ -26,14 +26,14 @@ function App() {
 
   return (
     <>
-    <ThemeContext.Provider value={theme}>
-      <Navigation />
-    </ThemeContext.Provider>
     <UserContext.Provider value={user}>
+      <ThemeContext.Provider value={theme}>
+        <Navigation />
+      </ThemeContext.Provider>
       <Home />
     </UserContext.Provider>
     </>
-  );
+  )
 }
 
 export default App

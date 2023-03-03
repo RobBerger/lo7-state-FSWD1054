@@ -1,17 +1,11 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Alert from 'react-bootstrap/Alert'
-import UserContext from './UserContext'
-import { useContext } from 'react'
+import Toaster from './Toaster'
+import Welcome from './Welcome'
 
 function Home() {
-  let user = useContext(UserContext)
-
   return (
     <>
-        <UserContext.Consumer>
-      <Alert variant="success">Welcome back, {user.name}!</Alert>
-      
       <Card className="text-center col-md-10 mx-auto my-3">
         <Card.Header>Featured</Card.Header>
         <Card.Body>
@@ -22,7 +16,9 @@ function Home() {
           <Button variant="primary">Click Here</Button>
         </Card.Body>
       </Card>
-    </UserContext.Consumer>
+      <Toaster>
+        <Welcome />
+      </Toaster>
     </>
   )
 }

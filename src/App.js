@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Navigation from './Navigation'
 import ThemeContext from './ThemeContext'
+import UserContext from './UserContext'
+import Home from './Home'
 
 function App() {
   let [theme, setTheme] = useState({
@@ -17,10 +19,20 @@ function App() {
     ))
   }
 
+  let [user, setUser] = useState({
+    name: "Alyssa",
+    avatar: require("../node_modules/fake-avatars/avatars/124.png").default
+  })
+
   return (
+    <>
     <ThemeContext.Provider value={theme}>
       <Navigation />
     </ThemeContext.Provider>
+    <UserContext.Provider value={user}>
+      <Home />
+    </UserContext.Provider>
+    </>
   );
 }
 
